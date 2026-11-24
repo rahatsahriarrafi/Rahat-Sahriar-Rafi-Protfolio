@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# editor / local agent
+.cursor/
+.vscode/
+.idea/
+AGENT_HANDOFF.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
