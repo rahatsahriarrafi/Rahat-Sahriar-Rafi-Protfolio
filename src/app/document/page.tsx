@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Suspense, useMemo } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { asset } from "@/lib/asset";
 
 const documents = new Set([
   "achieve-hicybercon-2026.jpg",
@@ -16,9 +17,8 @@ const documents = new Set([
   "csad-2026-certificate.png",
 ]);
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
 function DocumentView() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const searchParams = useSearchParams();
   const file = searchParams.get("file") || "";
   const title = searchParams.get("title") || "";
@@ -60,7 +60,7 @@ function DocumentView() {
         <h1 className="mb-5 mt-6 font-display text-2xl sm:text-3xl">{heading}</h1>
         <div className="flex min-h-[55vh] items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-5">
           <Image
-            src={`/${file}`}
+            src={asset(`/${file}`)}
             alt={`${heading} supporting document`}
             width={1800}
             height={1300}

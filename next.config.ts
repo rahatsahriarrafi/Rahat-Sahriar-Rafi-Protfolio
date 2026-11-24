@@ -4,7 +4,8 @@ const isGhPages = process.env.GITHUB_PAGES === "true";
 const basePath = isGhPages ? "/Rahat-Sahriar-Rafi-Protfolio" : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Static export only for GitHub Pages; Vercel/local use full Next.js.
+  ...(isGhPages ? { output: "export" as const } : {}),
   images: { unoptimized: true },
   ...(basePath
     ? {

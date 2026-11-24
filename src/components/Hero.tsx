@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/content";
+import { asset } from "@/lib/asset";
 import { AchievementTicker } from "./AchievementTicker";
 
 const socialLinks = [
@@ -29,31 +30,31 @@ function SocialIcon({ name }: { name: (typeof socialLinks)[number]["icon"] }) {
 
 export function Hero() {
   const toolLogos: Record<string, string> = {
-    "Nmap": "/tool-logos/nmap.png",
-    "Metasploit": "/tool-logos/metasploit.svg",
-    "Burp Suite": "/tool-logos/burpsuite.svg",
-    "Wireshark": "/tool-logos/wireshark.svg",
-    "SQLmap": "/tool-logos/sqlmap.svg",
-    "Nuclei": "/tool-logos/nuclei.svg",
-    "ZAP": "/tool-logos/zap.svg",
-    "Netcat": "/tool-logos/netcat.svg",
-    "Aircrack-ng": "/tool-logos/aircrack.svg",
-    "Hydra": "/tool-logos/hydra.svg",
-    "Hashcat": "/tool-logos/hashcat.svg",
-    "John": "/tool-logos/john.svg",
-    "Gobuster": "/tool-logos/gobuster.svg",
-    "FFUF": "/tool-logos/ffuf.svg",
-    "Nikto": "/tool-logos/nikto.svg",
-    "Responder": "/tool-logos/responder.svg",
-    "Kali Linux": "/tool-logos/kalilinux.svg",
-    "Ghidra": "/tool-logos/ghidra.svg",
-    "Autopsy": "/tool-logos/autopsy.svg",
-    "Volatility": "/tool-logos/volatility.svg",
-    "Binwalk": "/tool-logos/binwalk.svg",
-    "Mimikatz": "/tool-logos/mimikatz.svg",
-    "Impacket": "/tool-logos/impacket.svg",
-    "Enum4linux": "/tool-logos/enum4linux.svg",
-    "SearchSploit": "/tool-logos/searchsploit.svg",
+    "Nmap": asset("/tool-logos/nmap.png"),
+    "Metasploit": asset("/tool-logos/metasploit.svg"),
+    "Burp Suite": asset("/tool-logos/burpsuite.svg"),
+    "Wireshark": asset("/tool-logos/wireshark.svg"),
+    "SQLmap": asset("/tool-logos/sqlmap.svg"),
+    "Nuclei": asset("/tool-logos/nuclei.svg"),
+    "ZAP": asset("/tool-logos/zap.svg"),
+    "Netcat": asset("/tool-logos/netcat.svg"),
+    "Aircrack-ng": asset("/tool-logos/aircrack.svg"),
+    "Hydra": asset("/tool-logos/hydra.svg"),
+    "Hashcat": asset("/tool-logos/hashcat.svg"),
+    "John": asset("/tool-logos/john.svg"),
+    "Gobuster": asset("/tool-logos/gobuster.svg"),
+    "FFUF": asset("/tool-logos/ffuf.svg"),
+    "Nikto": asset("/tool-logos/nikto.svg"),
+    "Responder": asset("/tool-logos/responder.svg"),
+    "Kali Linux": asset("/tool-logos/kalilinux.svg"),
+    "Ghidra": asset("/tool-logos/ghidra.svg"),
+    "Autopsy": asset("/tool-logos/autopsy.svg"),
+    "Volatility": asset("/tool-logos/volatility.svg"),
+    "Binwalk": asset("/tool-logos/binwalk.svg"),
+    "Mimikatz": asset("/tool-logos/mimikatz.svg"),
+    "Impacket": asset("/tool-logos/impacket.svg"),
+    "Enum4linux": asset("/tool-logos/enum4linux.svg"),
+    "SearchSploit": asset("/tool-logos/searchsploit.svg"),
   };
 
   const toolColumns = [
@@ -88,7 +89,7 @@ export function Hero() {
         <div className="hero-main">
           <div className="hero-photo" aria-hidden="true">
             <Image
-              src="/rahat-portrait.jpg"
+              src={asset("/rahat-portrait.jpg")}
               alt=""
               width={819}
               height={1024}

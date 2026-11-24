@@ -19,7 +19,7 @@ const display = Instrument_Serif({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://rahatsahriarrafi.github.io/Rahat-Sahriar-Rafi-Protfolio";
+  "https://rahat-sahriar-rafi-portfolio.vercel.app";
 const pageTitle = `${profile.name} | Cybersecurity Researcher & Team NullX Founder`;
 const pageDescription =
   "Rahat Sahriar Rafi is a cybersecurity researcher, software engineering student, digital forensics builder, and founder of Team NullX in Bangladesh.";

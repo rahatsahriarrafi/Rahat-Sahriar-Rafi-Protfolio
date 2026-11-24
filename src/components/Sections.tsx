@@ -10,6 +10,7 @@ import {
   projects,
   research,
 } from "@/data/content";
+import { asset } from "@/lib/asset";
 import { Reveal } from "./Reveal";
 
 function SectionLabel({ index, label, tone = "dark" }: { index: string; label: string; tone?: "dark" | "light" }) {
@@ -296,7 +297,7 @@ export function Achievements() {
           <div className="grid gap-4">
             <Reveal>
               <Image
-                src="/hicybercon-certificate.png"
+                src={asset("/hicybercon-certificate.png")}
                 alt="Rahat Sahriar Rafi’s HI Cyber Con 2026 certificate of participation"
                 width={1280}
                 height={906}
@@ -306,7 +307,7 @@ export function Achievements() {
             </Reveal>
             <Reveal delay={0.08}>
               <Image
-                src="/achieve-hicybercon-2026.jpg"
+                src={asset("/achieve-hicybercon-2026.jpg")}
                 alt="Team NullX placing second in Bangladesh and fourteenth globally at HI Cyber Con 2026"
                 width={1024}
                 height={576}
@@ -320,7 +321,7 @@ export function Achievements() {
         <div className="mt-20 grid items-center gap-10 border-t border-white/10 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-12 md:mt-24 md:pt-16">
           <Reveal>
             <Image
-              src="/bcs-ctf-2026-certificate.png"
+              src={asset("/bcs-ctf-2026-certificate.png")}
               alt="Rahat Sahriar Rafi’s BCS CTF 2026 certificate, showing Team NullX at global rank 21"
               width={1280}
               height={905}
@@ -363,7 +364,7 @@ export function Achievements() {
         <div className="mt-20 grid items-center gap-10 border-t border-white/10 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-12 md:mt-24 md:pt-16">
           <Reveal className="lg:order-2">
             <Image
-              src="/bup-cse-fest-2026-certificate.png"
+              src={asset("/bup-cse-fest-2026-certificate.png")}
               alt="Rahat Sahriar Rafi’s Certificate of Participation for the BUP CSE Fest 2026 CTF preliminary round"
               width={1280}
               height={905}
@@ -418,7 +419,7 @@ export function Achievements() {
         <div className="mt-20 grid items-center gap-10 border-t border-white/10 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-12 md:mt-24 md:pt-16">
           <Reveal>
             <Image
-              src="/bdsec-ctf-2026-team.png"
+              src={asset("/bdsec-ctf-2026-team.png")}
               alt="Team NullX BDSec CTF 2026 result: 62nd place with 1,640 points"
               width={919}
               height={811}
@@ -459,7 +460,7 @@ export function Achievements() {
         <div className="mt-20 grid items-center gap-10 border-t border-white/10 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-12 md:mt-24 md:pt-16">
           <Reveal className="lg:order-2">
             <Image
-              src="/csad-2026-certificate.png"
+              src={asset("/csad-2026-certificate.png")}
               alt="Certificate of Appreciation for organizing Cyber Security Awareness Day 2026 at Daffodil International University"
               width={1280}
               height={905}
@@ -546,7 +547,7 @@ export function Certifications() {
           </Reveal>
           <Reveal delay={0.08}>
             <Image
-              src="/cbtp-certificate.png"
+              src={asset("/cbtp-certificate.png")}
               alt="Certified Blue Team Practitioner certificate awarded to Rahat Sahriar Rafi with Merit and a perfect score of 60 out of 60"
               width={1280}
               height={906}
