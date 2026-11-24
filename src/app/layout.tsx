@@ -17,21 +17,23 @@ const display = Instrument_Serif({
   weight: "400",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://rahatsahriarrafi.github.io/Rahat-Sahriar-Rafi-Protfolio";
 const pageTitle = `${profile.name} | Cybersecurity Researcher & Team NullX Founder`;
 const pageDescription =
   "Rahat Sahriar Rafi is a cybersecurity researcher, software engineering student, digital forensics builder, and founder of Team NullX in Bangladesh.";
 
 export const metadata: Metadata = {
-  ...(siteUrl
-    ? {
-        metadataBase: new URL(siteUrl),
-        alternates: { canonical: "/" },
-      }
-    : {}),
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: pageTitle,
   description: pageDescription,
   applicationName: "Rahat Sahriar Rafi Portfolio",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   keywords: [
     "Rahat Sahriar Rafi",
     "cybersecurity researcher Bangladesh",
@@ -61,24 +63,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_BD",
     siteName: "Rahat Sahriar Rafi Portfolio",
-    ...(siteUrl
-      ? {
-          images: [
-            {
-              url: "/rahat-portrait.jpg",
-              width: 819,
-              height: 1024,
-              alt: `Portrait of ${profile.name}`,
-            },
-          ],
-        }
-      : {}),
+    images: [
+      {
+        url: "/rahat-portrait.jpg",
+        width: 819,
+        height: 1024,
+        alt: `Portrait of ${profile.name}`,
+      },
+    ],
   },
   twitter: {
-    card: siteUrl ? "summary_large_image" : "summary",
+    card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    ...(siteUrl ? { images: ["/rahat-portrait.jpg"] } : {}),
+    images: ["/rahat-portrait.jpg"],
   },
 };
 
