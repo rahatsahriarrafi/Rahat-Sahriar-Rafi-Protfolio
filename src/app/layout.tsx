@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     siteName: "Rahat Sahriar Rafi Portfolio",
     images: [
       {
-        url: "/rahat-portrait.jpg",
+        url: "/rahat-portrait-suit.jpg",
         width: 819,
         height: 1024,
         alt: `Portrait of ${profile.name}`,
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/rahat-portrait.jpg"],
+    images: ["/rahat-portrait-suit.jpg"],
   },
 };
 
