@@ -44,7 +44,7 @@ export function AchievementTicker() {
               {achievementHighlights.map((item) => (
                 <a
                   className="achievement-marquee__item"
-                  href={`/document?file=${encodeURIComponent(item.document.slice(1))}&title=${encodeURIComponent(item.label)}`}
+                  href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/document?file=${encodeURIComponent(item.document.slice(1))}&title=${encodeURIComponent(item.label)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open supporting document for ${item.label}`}

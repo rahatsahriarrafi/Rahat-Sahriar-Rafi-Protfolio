@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
-import { notFound } from "next/navigation";
+"use client";
 
-export const instant = false;
+import Image from "next/image";
+import { Suspense, useMemo } from "react";
+import { ArrowLeft } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const documents = new Set([
   "achieve-hicybercon-2026.jpg",
@@ -15,22 +16,42 @@ const documents = new Set([
   "csad-2026-certificate.png",
 ]);
 
-type DocumentPageProps = {
-  searchParams: Promise<{ file?: string; title?: string }>;
-};
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-export default async function DocumentPage({ searchParams }: DocumentPageProps) {
-  const { file, title } = await searchParams;
+function DocumentView() {
+  const searchParams = useSearchParams();
+  const file = searchParams.get("file") || "";
+  const title = searchParams.get("title") || "";
 
-  if (!file || !documents.has(file)) notFound();
+  const heading = useMemo(
+    () => title || "Achievement document",
+    [title],
+  );
 
-  const heading = title || "Achievement document";
+  if (!file || !documents.has(file)) {
+    return (
+      <main className="min-h-screen bg-[#090807] px-5 py-6 text-[#f5f1e9] sm:px-8 sm:py-8">
+        <div className="mx-auto max-w-6xl">
+          <a
+            href={`${basePath}/#top`}
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm transition hover:border-[#dc987c] hover:bg-white/10"
+          >
+            <ArrowLeft size={16} aria-hidden="true" />
+            Back to portfolio
+          </a>
+          <h1 className="mb-5 mt-6 font-display text-2xl sm:text-3xl">
+            Document not found
+          </h1>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[#090807] px-5 py-6 text-[#f5f1e9] sm:px-8 sm:py-8">
       <div className="mx-auto max-w-6xl">
         <a
-          href="/#top"
+          href={`${basePath}/#top`}
           className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm transition hover:border-[#dc987c] hover:bg-white/10"
         >
           <ArrowLeft size={16} aria-hidden="true" />
@@ -49,5 +70,19 @@ export default async function DocumentPage({ searchParams }: DocumentPageProps) 
         </div>
       </div>
     </main>
+  );
+}
+
+export default function DocumentPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#090807] px-5 py-6 text-[#f5f1e9]">
+          <p className="mx-auto max-w-6xl">Loading document…</p>
+        </main>
+      }
+    >
+      <DocumentView />
+    </Suspense>
   );
 }
