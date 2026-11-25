@@ -130,7 +130,7 @@ export function Hero() {
           </div>
 
           <aside className="hero-tool-list" aria-label="Tools and technologies">
-            <span className="hero-tool-heading">Tool Expertise</span>
+            <span className="hero-tool-heading">Tools Familiarity</span>
             <div className="hero-tool-columns">
               {toolColumns.map(({ direction, tools }, columnIndex) => (
                 <div className={`hero-tool-column hero-tool-column--${direction}`} key={columnIndex}>
